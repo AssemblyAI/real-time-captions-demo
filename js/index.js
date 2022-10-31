@@ -37,8 +37,11 @@ const stopRecordingCallback = () => {
 startButton.onclick = async function () {
   this.disabled = true;
   this.innerText = 'Camera Loading...'
+
+  const isLocal = window.location.hostname === 'localhost'
+  const url = isLocal ? 'http://localhost:8000/' : 'https://captions-demo-backend.fly.dev/vtt'
   
-  const response = await fetch('http://localhost:8000'); // get temp session token from server.js (backend)
+  const response = await fetch(url); // get temp session token from server.js (backend)
   const data = await response.json();
 
   if(data.error){

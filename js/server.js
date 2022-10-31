@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express');
+const PORT = process.env.PORT || 8000
 const axios = require('axios');
 const cors = require('cors');
 
@@ -20,7 +21,4 @@ app.get('/', async (req, res) => {
   }
 });
 
-app.set('port', 8000);
-const server = app.listen(app.get('port'), () => {
-  console.log(`Server is running on port ${server.address().port}`);
-});
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`))

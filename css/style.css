@@ -15,7 +15,7 @@ header {
 }
 
 #demo-title {
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 400;
   text-align: center;
   margin-bottom: 5px;
@@ -66,9 +66,8 @@ button:disabled {
   font-size: 20px;
   font-family: Rubik, sans-serif;
   position: absolute;
-  width: 960px; 
-  min-width: 400px;
-  bottom: 9px;
+  width: 890px; 
+  bottom: 53px;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.53);
   padding: 10px;
