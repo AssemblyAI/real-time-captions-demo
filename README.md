@@ -1,7 +1,5 @@
 # AssemblyAI Real-Time Video Captions
 
-## Description
-
 This open-source repo demonstrates how to create live video captions using AssemblyAI's [real-time API](https://www.assemblyai.com/docs/walkthroughs#realtime-streaming-transcription)!
 
 This app uses a web camera to record live video. It will also grab an audio stream from the user's computer and then send that over a WebSocket to AssemblyAI for real-time transcription. Once AssemblyAI begins transcribing, live captions will be displayed on the video. This is accomplished using Express for our backend and Vanilla JavaScript with the npm package [recordrtc](https://www.npmjs.com/package/recordrtc) for our front-end.
