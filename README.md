@@ -33,3 +33,7 @@ API_KEY=<YOUR API KEY HERE>
 - [recordrtc](https://www.npmjs.com/package/recordrtc)
 - [Express](https://expressjs.com/)
 - [dotenv](https://www.npmjs.com/package/dotenv)
+
+Contact Us
+--
+If you have any questions, please feel free to reach out to our Support team - support@assemblyai.com!
