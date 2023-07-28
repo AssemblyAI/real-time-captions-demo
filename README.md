@@ -29,7 +29,7 @@ API_KEY=<YOUR API KEY HERE>
 
 ## Further Documentation
 
-- [AssemblyAI Real-Time Documention](https://docs.assemblyai.com/overview/real-time-transcription)
+- [AssemblyAI Real-Time Documention]([https://docs.assemblyai.com/overview/real-time-transcription](https://www.assemblyai.com/docs/Guides/real-time_streaming_transcription))
 - [recordrtc](https://www.npmjs.com/package/recordrtc)
 - [Express](https://expressjs.com/)
 - [dotenv](https://www.npmjs.com/package/dotenv)
