@@ -9,15 +9,21 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', async (req, res) => {
+  res.set('Cache-Control', 'no-store');
+  if (!process.env.API_KEY) {
+    return res.status(500).json({ error: 'Set API_KEY on the demo server.' });
+  }
+
   try {
-    const response = await axios.post('https://api.assemblyai.com/v2/realtime/token', // use account token to get a temp user token
-      { expires_in: 3600 }, // can set a TTL timer in seconds.
-      { headers: { authorization: process.env.API_KEY } }); // AssemblyAI API Key goes here
-    const { data } = response; 
-    res.json(data); 
+    const { data } = await axios.post('https://token.assemblyai.com/v1/token',
+      { product: 'streaming', expires_in_seconds: 60 },
+      { headers: { authorization: process.env.API_KEY }, timeout: 10_000 });
+    if (typeof data?.token !== 'string' || !data.token) {
+      return res.status(502).json({ error: 'AssemblyAI did not return a streaming token.' });
+    }
+    res.json({ token: data.token });
   } catch (error) {
-    const {response: {status, data}} = error;    
-    res.status(status).json(data);
+    res.status(error.response?.status ?? 502).json({ error: 'Could not get an AssemblyAI streaming token.' });
   }
 });
 
